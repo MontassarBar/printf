@@ -37,7 +37,7 @@ return (1);
 int _printf(const char *format, ...)
 {
 va_list x;
-int q, w;
+int q, w, r;
 spec  specifiers[] = {
 {'c', _prchar},
 {'s', _prstr},
@@ -47,6 +47,7 @@ spec  specifiers[] = {
 {0, NULL}
 };
 q = 0;
+r = 0;
 va_start(x, format);
 while (format[q] != '\0' && format != NULL)
 {
@@ -59,15 +60,17 @@ while ((specifiers[w].y != format[q]) && specifiers[w].y != 0)
 w++;
 }
 if (specifiers[w].y == format[q])
+{
 specifiers[w].t(x);
+}
 }
 else
 {
 _putchar(format[q]);
-
+r++;
 }
 q++;
 }
 va_end(x);
-return (0);
+return (r);
 }
