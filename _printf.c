@@ -6,31 +6,33 @@
 *
 *
 **/
-void _prchar(va_list x)
+int _prchar(va_list x)
 {
 char *ptr;
-ptr = malloc(sizeof(char) * 2);
+ptr = malloc(sizeof(char));
 ptr[0] = va_arg(x, int);
-ptr[1] = '\0';
-write (STDOUT_FILENO, ptr, _strlen(ptr));
+return (write (STDOUT_FILENO, ptr, _strlen(ptr)));
 }
-void _prstr(va_list x)
+int _prstr(va_list x)
 {
 char *ptr;
 ptr = va_arg(x, char*);
 if (ptr == NULL)
 ptr = "(null)";
-write (STDOUT_FILENO, ptr, _strlen(ptr));
+return (write (STDOUT_FILENO, ptr, _strlen(ptr)));
 }
-void _print(va_list x)
+int _print(va_list x)
 {
 int y;
+char *t;
 y = va_arg(x, int);
-print_number(y);
+t = _itoa(y);
+return (write (STDOUT_FILENO, t, _strlen(t)));
 }
-void _prpercent()
+int _prpercent()
 {
 _putchar('%');
+return (1);
 }
 int _printf(const char *format, ...)
 {
@@ -60,7 +62,10 @@ if (specifiers[w].y == format[q])
 specifiers[w].t(x);
 }
 else
+{
 _putchar(format[q]);
+
+}
 q++;
 }
 va_end(x);
