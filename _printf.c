@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
 /**
 *
 *
@@ -19,7 +20,8 @@ char *ptr;
 ptr = va_arg(x, char*);
 if (ptr == NULL)
 ptr = "(null)";
-return (write (STDOUT_FILENO, ptr, _strlen(ptr)));
+write (STDOUT_FILENO, ptr, _strlen(ptr));
+return (_strlen(ptr));
 }
 int _print(va_list x)
 {
@@ -27,7 +29,8 @@ int y;
 char *t;
 y = va_arg(x, int);
 t = _itoa(y);
-return (write (STDOUT_FILENO, t, _strlen(t)));
+write (STDOUT_FILENO, t, _strlen(t));
+return (_strlen(t));
 }
 int _prpercent()
 {
@@ -37,7 +40,7 @@ return (1);
 int _printf(const char *format, ...)
 {
 va_list x;
-int q, w, r;
+int q, w, r, i;
 spec  specifiers[] = {
 {'c', _prchar},
 {'s', _prstr},
@@ -48,6 +51,7 @@ spec  specifiers[] = {
 };
 q = 0;
 r = 0;
+i = 0;
 va_start(x, format);
 while (format[q] != '\0' && format != NULL)
 {
@@ -62,6 +66,7 @@ w++;
 if (specifiers[w].y == format[q])
 {
 specifiers[w].t(x);
+i++;
 }
 }
 else
@@ -72,5 +77,5 @@ r++;
 q++;
 }
 va_end(x);
-return (r);
+return (r+i);
 }
