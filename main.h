@@ -16,8 +16,8 @@ char *_strstr(char *haystack, char *needle);
 
 
 
-
-
-
-
+typedef struct spec {
+char y;
+void (*t)(va_list x);
+}spec;
 #endif
