@@ -1,5 +1,8 @@
 #ifndef main_h
 #define main_h
+
+#include <stdarg.h>
+
 int _printf(const char *format, ...);
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
@@ -14,10 +17,20 @@ char *_strstr(char *haystack, char *needle);
 
 
 
+/**
+ * struct printer - structure for printing various types
+ * @t: type to print
+ * @f: function to print
+ */
+typedef struct printer
+{
+	char *t;
+	int (*f)(va_list);
+} print_t;
 
 
-
-
-
+int _putchar(char c);
+int print_c(va_list c);
+int print_s(va_list s);
 
 #endif
