@@ -8,10 +8,10 @@
 **/
 int _prchar(va_list x)
 {
-char *ptr;
-ptr = malloc(sizeof(char));
-ptr[0] = va_arg(x, int);
-return (write (STDOUT_FILENO, ptr, _strlen(ptr)));
+char ptr;
+ptr = va_arg(x, int);
+_putchar(ptr);
+return (1);
 }
 int _prstr(va_list x)
 {
