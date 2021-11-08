@@ -46,9 +46,10 @@ spec  specifiers[] = {
 };
 q = 0;
 va_start(x, format);
-while (format[q] != '\0' && format != NULL && format[q] == '%')
+while (format[q] != '\0' && format != NULL)
 {
 if (format[q] == '%')
+{
 format++;
 w = 0;
 while ((specifiers[w].y != format[q]) && specifiers[w].y != 0)
@@ -57,9 +58,11 @@ w++;
 }
 if (specifiers[w].y == format[q])
 specifiers[w].t(x);
+}
+else
+_putchar(format[q]);
 q++;
 }
-_putchar('\n');
 va_end(x);
 return (0);
 }
