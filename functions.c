@@ -39,8 +39,8 @@ return (s);
 char *_strcat(char *dest, char *src)
 {
 int x, z, i;
-z = strlen(src);
-i = strlen(dest);
+z = _strlen(src);
+i = _strlen(dest);
 for (x = 0; x < z; x++)
 {
 dest[i] = src[x];
@@ -113,7 +113,7 @@ return (i);
 int _strcmp(char *s1, char *s2)
 {
 int x, y, z, a;
-y = strlen(s1);
+y = _strlen(s1);
 z = 0;
 a = 0;
 for (x = 0; ((x < y)&&(z == 0)); x++)
@@ -135,8 +135,8 @@ return (a);
 unsigned int _strspn(char *s, char *accept)
 {
 int x, y, z, a, r;
-y = strlen(s);
-a = strlen(accept);
+y = _strlen(s);
+a = _strlen(accept);
 r = 0;
 for (x = 0; x < y; x++)
 {
@@ -162,8 +162,8 @@ return (r);
 char *_strpbrk(char *s, char *accept)
 {
 int x, i, y, z;
-y = strlen(s);
-z = strlen(accept);
+y = _strlen(s);
+z = _strlen(accept);
 for (x = 0; x < y; x++)
 {
 for (i = 0; i < z; i++)
@@ -184,7 +184,7 @@ return (NULL);
 char *_strstr(char *haystack, char *needle)
 {
 int y, z;
-z = strlen(haystack);
+z = _strlen(haystack);
 for (y = 0; y < z; y++)
 {
 if (*needle == haystack[y])
@@ -202,7 +202,7 @@ return (NULL);
 char *_strcpy(char *dest, char *src)
 {
 int x, y, z;
-y = strlen(src);
+y = _strlen(src);
 z = 0;
 for (x = 0; x <= y; x++)
 {
