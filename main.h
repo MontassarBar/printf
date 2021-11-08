@@ -1,5 +1,8 @@
 #ifndef main_h
 #define main_h
+#include <stdarg.h>
+
+
 int _printf(const char *format, ...);
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
@@ -11,8 +14,6 @@ char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
-
-
 
 
 
