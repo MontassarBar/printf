@@ -5,7 +5,9 @@
 #include <stdio.h>
 
 /**
- *
+ *_printf-recreates the printf function to print to stdout
+ *@format: character string to be printed
+ * Return: the number of characters printed (excluding the null byte)
  */
 int _printf(const char *format, ...)
 {
@@ -15,8 +17,10 @@ spec  specifiers[] = { {'c', _prchar}, {'s', _prstr}, {'d', _print},
 {'i', _print}, {'%', _prpercent}, {0, NULL}
 };
 va_start(x, format);
-if (format == NULL){
-return (-1);}
+if (format == NULL)
+{
+return (-1);
+}
 while (format[q] != '\0' && format != NULL)
 {
 if (format[q] == '%')
