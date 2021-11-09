@@ -58,7 +58,7 @@ return (e);
  *_prpercent - prints specifier %
  *Return: the number of characters printed
  **/
-int _prpercent(void)
+int _prpercent()
 {
 _putchar('%');
 return (1);

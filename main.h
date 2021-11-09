@@ -21,7 +21,7 @@ int _abs(int n);
 int _prchar(va_list x);
 int _prstr(va_list x);
 int _print(va_list x);
-int _prpercent(void);
+int _prpercent();
 /**
 *struct spec - type
 *@y: char
