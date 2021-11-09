@@ -34,17 +34,6 @@ int _putchar(char c)
 {
 return (write(1, &c, 1));
 }
-/**
-**_memset - fills memory with a constant byte
-*loop
-*@s: pointer
-*@b: var
-*@n: var
-*Return: s
-**/
-char *_memset(char *s, char b, unsigned int n)
-{
-unsigned int x;
 
 /**
 * *_strcat -  concatenates two strings
