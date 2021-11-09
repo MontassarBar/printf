@@ -31,7 +31,6 @@ y = 0;
 e = 0;
 y = va_arg(x, int);
 t = _itoa(y);
-
 e = _strlen(t);
 write (STDOUT_FILENO, t, _strlen(t));
 return (e);
@@ -58,6 +57,7 @@ r = 0;
 i = 0;
 va_start(x, format);
 if (format == NULL)
+
 return (-1);
 while (format[q] != '\0' && format != NULL)
 {
@@ -72,6 +72,8 @@ w++;
 if (specifiers[w].y == format[q])
 {
 i += specifiers[w].t(x);
+if (specifiers[w].t(x) == NULL)
+return (-1);
 }
 else
 {
