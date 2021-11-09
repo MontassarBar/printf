@@ -51,9 +51,9 @@ if (t == NULL)
 return (-1);
 e = _strlen(t);
 write (STDOUT_FILENO, t, _strlen(t));
+free(t);
 return (e);
 }
-
 /**
 *_prpercent - prints specifier %
 *@x: number of arguments
