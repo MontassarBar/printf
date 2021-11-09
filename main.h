@@ -1,12 +1,12 @@
 #ifndef main_h
 #define main_h
 #include <stdarg.h>
+
 void print_number(int n);
 int _putchar(char c);
 char *_itoa(int n);
 int _printf(const char *format, ...);
 int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
 int count_d10(int n);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
