@@ -5,72 +5,18 @@
 #include <stdio.h>
 
 /**
-*
-*
-**/
-int _prchar(va_list x)
-{
-char ptr;
-ptr = va_arg(x, int);
-_putchar(ptr);
-return (1);
-}
-
-/**
- *
- **/
-int _prstr(va_list x)
-{
-char *ptr;
-int y = 0;
-ptr = va_arg(x, char*);
-if (ptr == NULL)
-ptr = "(null)";
-y = _strlen(ptr);
-write (STDOUT_FILENO, ptr, _strlen(ptr));
-return (y);
-}
-
-/**
- *
- *
- */
-int _print(va_list x)
-{
-int y, e;
-char *t;
-y = 0;
-e = 0;
-y = va_arg(x, int);
-t = _itoa(y);
-if (t == NULL)
-return (-1);
-e = _strlen(t);
-write (STDOUT_FILENO, t, _strlen(t));
-return (e);
-}
-
-/**
- *
- */
-int _prpercent()
-{
-_putchar('%');
-return (1);
-}
-
-/**
  *
  */
 int _printf(const char *format, ...)
 {
 va_list x;
 int q = 0, w, r = 0, i = 0;
-spec  specifiers[] = { {'c', _prchar},{'s', _prstr},{'d', _print},{'i', _print},{'%', _prpercent},{0, NULL}
+spec  specifiers[] = { {'c', _prchar}, {'s', _prstr}, {'d', _print},
+{'i', _print}, {'%', _prpercent}, {0, NULL}
 };
 va_start(x, format);
-if (format == NULL)
-return (-1);
+if (format == NULL){
+return (-1);}
 while (format[q] != '\0' && format != NULL)
 {
 if (format[q] == '%')

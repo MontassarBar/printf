@@ -18,6 +18,10 @@ char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 int _abs(int n);
 
+int _prchar(va_list x);
+int _prstr(va_list x);
+int _print(va_list x);
+int _prpercent();
 
 typedef struct spec {
 char y;
