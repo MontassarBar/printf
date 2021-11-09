@@ -66,17 +66,10 @@ int _printf(const char *format, ...)
 {
 va_list x;
 int q = 0, w, r = 0, i = 0;
-spec  specifiers[] = {
-{'c', _prchar},
-{'s', _prstr},
-{'d', _print},
-{'i', _print},
-{'%', _prpercent},
-{0, NULL}
+spec  specifiers[] = { {'c', _prchar},{'s', _prstr},{'d', _print},{'i', _print},{'%', _prpercent},{0, NULL}
 };
 va_start(x, format);
 if (format == NULL)
-
 return (-1);
 while (format[q] != '\0' && format != NULL)
 {
@@ -85,13 +78,9 @@ if (format[q] == '%')
 format++;
 w = 0;
 while ((specifiers[w].y != format[q]) && specifiers[w].y != 0)
-{
 w++;
-}
 if (specifiers[w].y == format[q])
-{
 i += specifiers[w].t(x);
-}
 else
 {
 _putchar('%');
