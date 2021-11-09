@@ -17,20 +17,24 @@ return (1);
 int _prstr(va_list x)
 {
 char *ptr;
+int y = 0;
 ptr = va_arg(x, char*);
-if (ptr == NULL)
-ptr = "(null)";
+y = _strlen(ptr);
 write (STDOUT_FILENO, ptr, _strlen(ptr));
-return (_strlen(ptr));
+return (y);
 }
 int _print(va_list x)
 {
-int y;
+int y, e;
 char *t;
+y = 0;
+e = 0;
 y = va_arg(x, int);
 t = _itoa(y);
+
+e = _strlen(t);
 write (STDOUT_FILENO, t, _strlen(t));
-return (_strlen(t));
+return (e);
 }
 int _prpercent()
 {
@@ -65,8 +69,7 @@ w++;
 }
 if (specifiers[w].y == format[q])
 {
-specifiers[w].t(x);
-i++;
+i = specifiers[w].t(x);
 }
 }
 else
@@ -77,5 +80,5 @@ r++;
 q++;
 }
 va_end(x);
-return (r+i);
+return (r + i);
 }
