@@ -73,6 +73,12 @@ if (specifiers[w].y == format[q])
 {
 i += specifiers[w].t(x);
 }
+else
+{
+_putchar('%');
+_putchar(format[q]);
+r++;
+}
 }
 else
 {
