@@ -5,9 +5,10 @@
 #include <stdio.h>
 
 /**
-*
-*
-**/
+ * _prchar - prints char
+ * @x: number of arguments
+ * Return: the number of characters printed
+ */
 int _prchar(va_list x)
 {
 char ptr;
@@ -17,7 +18,9 @@ return (1);
 }
 
 /**
- *
+ *_prstr - prints string
+ *@x: number of arguments
+ *Return: the number of characters printed
  **/
 int _prstr(va_list x)
 {
@@ -27,14 +30,15 @@ ptr = va_arg(x, char*);
 if (ptr == NULL)
 ptr = "(null)";
 y = _strlen(ptr);
-write (STDOUT_FILENO, ptr, _strlen(ptr));
+write(STDOUT_FILENO, ptr, _strlen(ptr));
 return (y);
 }
 
 /**
- *
- *
- */
+ *_print - prints decimal or integer
+ *@x: number of arguments
+ *Return: the number of characters printed
+ **/
 int _print(va_list x)
 {
 int y, e;
@@ -51,11 +55,13 @@ return (e);
 }
 
 /**
- *
- */
+ *_prpercent - prints specifier %
+ *Return: the number of characters printed
+ **/
+int _prpercent(va_list x)
+{
 int _prpercent()
 {
 _putchar('%');
 return (1);
 }
-
