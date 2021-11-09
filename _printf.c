@@ -31,6 +31,8 @@ while ((specifiers[w].y != format[q]) && specifiers[w].y != 0)
 w++;
 if (specifiers[w].y == format[q])
 i += specifiers[w].t(x);
+if (specifiers[w].t(x) == 0)
+return (-1);
 else
 {
 _putchar('%');
