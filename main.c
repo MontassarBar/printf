@@ -3,7 +3,10 @@
 #include "main.h"
 int main(void)
 {
-  printf("test %%%d%d%%\n", 5);
-    _printf("test %%%d%d%%\n", 5);
+    int i = 0;
+    char *e;
+e = NULL;
+ i = _printf("%s\n", e);
+   printf("%d\n", i);
     return (0);
 }

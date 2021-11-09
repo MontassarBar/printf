@@ -20,7 +20,7 @@ char *ptr;
 int y = 0;
 ptr = va_arg(x, char*);
 if (ptr == NULL)
-return (-1);
+ptr = "(null)";
 y = _strlen(ptr);
 write (STDOUT_FILENO, ptr, _strlen(ptr));
 return (y);
