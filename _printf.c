@@ -57,6 +57,8 @@ q = 0;
 r = 0;
 i = 0;
 va_start(x, format);
+if (format == NULL)
+return (-1);
 while (format[q] != '\0' && format != NULL)
 {
 if (format[q] == '%')
@@ -69,7 +71,7 @@ w++;
 }
 if (specifiers[w].y == format[q])
 {
-i = specifiers[w].t(x);
+i += specifiers[w].t(x);
 }
 }
 else
