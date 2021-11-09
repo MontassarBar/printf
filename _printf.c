@@ -72,8 +72,6 @@ w++;
 if (specifiers[w].y == format[q])
 {
 i += specifiers[w].t(x);
-if (i == NULL)
-return (-1);
 }
 else
 {
