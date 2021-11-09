@@ -40,6 +40,7 @@ return (write(1, &c, 1));
 /**
 *_abs - abs
 *@n: var
+*Return: n
 **/
 int _abs(int n)
 {
@@ -71,12 +72,13 @@ return (i);
  * _itoa - int to str
  *
  * @n: number
+ * Return: s
  **/
 char *_itoa(int n)
 {
 	char *s;
 	int x = 0,
-	y = 0,c = 0,i = 0,b = _abs(n),l = 0,e = 1;
+	y = 0, c = 0, i = 0, b = _abs(n), l = 0, e = 1;
 
 	while (b != 0)
 	{

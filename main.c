@@ -4,9 +4,7 @@
 int main(void)
 {
     int i = 0;
-    char *e;
-e = NULL;
- i = _printf("%s\n", e);
+ i = printf("%d\n", 4445);
    printf("%d\n", i);
     return (0);
 }

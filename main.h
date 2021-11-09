@@ -21,10 +21,15 @@ int _abs(int n);
 int _prchar(va_list x);
 int _prstr(va_list x);
 int _print(va_list x);
-int _prpercent();
-
-typedef struct spec {
+int _prpercent(void);
+/**
+*struct spec - type
+*@y: char
+*@t: pointer to function
+**/
+typedef struct spec
+{
 char y;
 int (*t)(va_list x);
-}spec;
+} spec;
 #endif
