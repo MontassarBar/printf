@@ -55,10 +55,11 @@ return (e);
 }
 
 /**
- *_prpercent - prints specifier %
- *Return: the number of characters printed
- **/
-int _prpercent()
+*_prpercent - prints specifier %
+*@x: number of arguments
+*Return: the number of characters printed
+**/
+int _prpercent(__attribute__((unused))va_list x)
 {
 _putchar('%');
 return (1);
