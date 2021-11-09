@@ -19,6 +19,8 @@ int _prstr(va_list x)
 char *ptr;
 int y = 0;
 ptr = va_arg(x, char*);
+if (ptr == NULL)
+return (-1);
 y = _strlen(ptr);
 write (STDOUT_FILENO, ptr, _strlen(ptr));
 return (y);
@@ -31,6 +33,8 @@ y = 0;
 e = 0;
 y = va_arg(x, int);
 t = _itoa(y);
+if (t == NULL)
+return (-1);
 e = _strlen(t);
 write (STDOUT_FILENO, t, _strlen(t));
 return (e);
