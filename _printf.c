@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
 *
 *
@@ -14,6 +15,10 @@ ptr = va_arg(x, int);
 _putchar(ptr);
 return (1);
 }
+
+/**
+ *
+ **/
 int _prstr(va_list x)
 {
 char *ptr;
@@ -25,6 +30,11 @@ y = _strlen(ptr);
 write (STDOUT_FILENO, ptr, _strlen(ptr));
 return (y);
 }
+
+/**
+ *
+ *
+ */
 int _print(va_list x)
 {
 int y, e;
@@ -39,15 +49,23 @@ e = _strlen(t);
 write (STDOUT_FILENO, t, _strlen(t));
 return (e);
 }
+
+/**
+ *
+ */
 int _prpercent()
 {
 _putchar('%');
 return (1);
 }
+
+/**
+ *
+ */
 int _printf(const char *format, ...)
 {
 va_list x;
-int q, w, r, i;
+int q = 0, w, r = 0, i = 0;
 spec  specifiers[] = {
 {'c', _prchar},
 {'s', _prstr},
@@ -56,9 +74,6 @@ spec  specifiers[] = {
 {'%', _prpercent},
 {0, NULL}
 };
-q = 0;
-r = 0;
-i = 0;
 va_start(x, format);
 if (format == NULL)
 
