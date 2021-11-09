@@ -35,25 +35,6 @@ int _putchar(char c)
 return (write(1, &c, 1));
 }
 
-/**
-* *_strcat -  concatenates two strings
-*loop
-*@dest: pointer
-*@src: pointer
-*Return: dest
-**/
-char *_strcat(char *dest, char *src)
-{
-int x, z, i;
-z = _strlen(src);
-i = _strlen(dest);
-for (x = 0; x < z; x++)
-{
-dest[i] = src[x];
-i++;
-}
-return (dest);
-}
 
 /**
 *_abs - abs
