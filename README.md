@@ -26,14 +26,17 @@ Where the specifier character at the end is the most significant component, sinc
 it defines the type and the interpretation of its corresponding argument:
 
 Implemented format specifiers
-## Specifier    | Output                 | Example     |
-| :-----------: |:----------------------:| :-----------:|
+|  Specifier    | Output                 | Example      |
+|  -----------  | ---------------------- | :-----------:|
 | c             | Character              | a            |
 | s             | String of characters   | sample       |
 | d or i        | Signed decimal integer | 392          |
 | %             | A % followed by another|              |
 |               | % character will write |              |
 |               | single % to the stream |              |
+
+
+
 
 
 ##Compilation and testing
