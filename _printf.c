@@ -35,7 +35,7 @@ else
 {
 _putchar('%');
 _putchar(format[q]);
-r++;
+r += 2;
 }
 }
 else
