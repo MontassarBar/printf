@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 int main(){
-printf("%r%t%y");
+	int j = 0;
+j = _printf("%");
+printf("%d", j);
 return (0);
 }

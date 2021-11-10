@@ -26,6 +26,8 @@ while (format[q] != '\0' && format != NULL)
 if (format[q] == '%')
 {
 format++;
+if (format[q] == 0)
+return (-1);
 w = 0;
 while ((specifiers[w].y != format[q]) && specifiers[w].y != 0)
 w++;
