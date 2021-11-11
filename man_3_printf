@@ -1,72 +1,74 @@
-.\"_printf man page
-.\"
-.\"
-.TH _PRINTF 3 "08 November 2021" "_printf Manuel"
+"# _printf man page
+."
+."
+.TH _PRINTF 3 "10 November 2021" "_printf Manuel"
 
-.SH NAME
+.SH # NAME  _prinf()  print data and format
 .SH ""
 
 .B _printf
 
-.SH SYNOPSIS
-.SH ""
+.SH # SYNOPSIS
+.SH "" 
+.int _printf(const char *[FORMAT], ...);
 
-_printf() function takes 2 arguments: a character pointer to a string: format, \
-and a 'variable arguments list': arg_list. _printf() loops through the format \
-string searching for a conversion specifier, which is indicated with the '%' \
-symbol. If found, the match_specifier() function loops through an array of \
-structs (contianing character and function pairs) to find the specifier \
-function that is matched with the given conversion specifier from the format \
-string, and then returns a pointer to that paired function. _printf() uses the \
-pointer to that specifier function to call the specifier function on the next \
-queued argument from the arg_list. Each specifier function writes a character \
-one at a time as determined from the value in arg_list.
-
-.SS Compile
-
-$ gcc -Wall -Werror -Wextra -pedantic *.c
-.RE
-
-.SS Usage
-.RS
-
-int _printf(const char *[FORMAT], ...);
-
-FORMAT refers to a string with any number of specifiers followed by a '%' \
-symbol. i.e. "My name is %s and I am %d years old". '...' refers to a list \
-of variadic (variable arguments in C Language), which can be any number of \
-variables of any type.
-
-.SS Example
+.SH # DESCRIPTION Prints ARGUMENT(s) based on FORMAT
+.PP
+This function writes the output under the control of a format string
+that specifieshow subsequent arguments (or arguments accessed via the
+variable-length argument facilities of stdarg(3)) are converted for
+output.
+.PP
+If format includes format specifiers (subsequences beginning with %),
+the additional arguments following format are formatted and inserted in
+the resulting string replacing their respective specifiers.
+.PP
+The format string is composed of zero or more directives: ordinary
+characters (not %), which are copied unchangd to the output stream; and
+conversion specifications, each of which results in fetching zero or
+more subsequent arguments.
+.PD 0
+.P
+.PD
+Each conversion specification is introduced by the % character.
+.PD 0
+.P
+.PD
+Each conversion specification is introduced by the % character.
+.PD 0
+.P
+.PD
+The arguments must correspond properly with the conversion specifier.
+.PP
+After the %, the following appear in sequence:
+.PP
+c The int argument is converted to an unsigned char, and the re-
+sulting character is written.
+.PP
+s The char * argument is expected to be a pointer to an array of
+character type (pointer to a string).
+Characters from the array are written up to (but not including) a
+terminating NUL charac- ter.
+.PP
+% A
+.SS # Example
 .RS
 
 _printf("My name is %s and I am %d years old",)
 .RE
 
-.SH DESCRIPTION
-.SH ""
-
-The function _printf() writes output to standard output. It writes the output \
-under the control of a format string that specifies how subsequent arguments \
-are converted for output.
-
-.SS Return Value
+.SS # Return Value
 
 Upon successful return, these functions return an integer for the number of \
 characters printed, which exclude the terminating null byte ('\0').
 
-
-
-.SH "SEE ALSO"
+.SH # "SEE ALSO"
 .SH ""
 
 .BR printf(3),
 
 
-.SH "AUTHOR"
-
-
+.SH # “AUTHOR"
 .SH ""
 
-Mouna Ben Ali and Montassar Barbouchi
-
+Mouna Ben Ali && Montassar Barbouchi
