@@ -12,7 +12,7 @@
 int _prchar(va_list x)
 {
 char ptr;
-ptr =+ va_arg(x, int);
+ptr = va_arg(x, int);
 _putchar(ptr);
 return (1);
 }
